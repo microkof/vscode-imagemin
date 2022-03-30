@@ -1,0 +1,49 @@
+{
+  "name": "vscode-imagemin",
+  "displayName": "VS Code Image Min (JPEG / PNG / GIF / SVG)",
+  "description": "Minify JPEG / PNG / GIF / SVG losslessly and convert JPEG/PNG/GIF to progressive / interlaced pictures, technology based on imagemin.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "publisher": "microkof",
+  "icon": "assets/logo.png",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microkof/vscode-imagemin.git"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-imagemin.minifyImages",
+        "title": "Minify Images"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "vscode-imagemin.minifyImages",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "fs-extra": "^10.0.1",
+    "imagemin": "7.0.1",
+    "imagemin-gifsicle": "7.0.0",
+    "imagemin-jpegtran": "7.0.0",
+    "imagemin-mozjpeg": "9.0.0",
+    "imagemin-optipng": "8.0.0",
+    "imagemin-svgo": "9.0.0",
+    "readdirp": "^3.6.0"
+  }
+}
